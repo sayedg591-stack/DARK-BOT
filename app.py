@@ -18,7 +18,7 @@ JSONBIN_API_KEY = '$2a$10$q/35T39uU3xqvQJ2AeyOjO0bC0gt865vWSeWxQkgggb1uDOIatOzm'
 def load_licenses():
     try:
         url = f"https://api.jsonbin.io/v3/b/{JSONBIN_BIN_ID}/latest"
-        headers = {'X-Master-Key': JSONBIN_API_KEY}
+        headers = {'X-Master-Key': JSONBIN_API_KEY}  
         res = requests.get(url, headers=headers, timeout=5)
         if res.status_code == 200:
             data = res.json().get('record', {})
